@@ -22,7 +22,7 @@ def lista_C(tt):
     C = []
     #Adiciona itens na lista de acordo com o total desejado
     for i in range(tt):
-        numero = int(input("Digite o {i+1}º número: ")
+        numero = int(input(f"Digite o {i+1}º número: "))
         C.append(numero)
     #Retorna a lista contendo as variáveis digitadas
     return C
@@ -32,7 +32,7 @@ def lista_D(tt):
     D = []
     #Adiciona itens na lista de acordo com o total desejado
     for i in range(tt):
-        numero = int(input("Digite o {i+1}º número: "))
+        numero = int(input(f"Digite o {i+1}º número: "))
         D.append(numero)
     #Os últimos serão os primeiros
     D.reverse()
