@@ -2,8 +2,8 @@
 def lista_A():
     A = []
     
-    for i in range(2):
-        letras = int(input())
+    for i in range(25):
+        letras = int(input(f'Digite o {i+1}º número da lista A: '))
         A.append(letras)
     
     return A
@@ -11,18 +11,16 @@ def lista_A():
 def lista_B():
     B = []
     
-    for i in range(2):
-        letras = int(input())
+    for i in range(25):
+        letras = int(input(f'Digite o {i+1}º número da lista B: '))
         B.append(letras)
     
     return B
 
-def lista_C():
-    A = lista_A()
-    B = lista_B()
+def lista_C(a, b):
     C = []
     
-    for item_A, item_B in zip(A, B):
+    for item_A, item_B in zip(a, b):
         C.append(item_A)
         C.append(item_B)
     
@@ -30,7 +28,13 @@ def lista_C():
         
 #Programa principal
 def main():
-    print(lista_C())
+    A = lista_A()
+    B = lista_B()
+    C = lista_C(A, B)
+
+    print('Eis a lista A:', A)
+    print('Eis a lista B:', B)
+    print('Eis a lista C, a intercalação das listas A e B:', C)
 
 if __name__ == '__main__':
     main()
