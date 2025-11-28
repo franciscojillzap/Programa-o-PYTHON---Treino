@@ -12,7 +12,7 @@ def alunos_medianos(L):
 def main():
     lista = []
 
-    for i in range(5):
+    for i in range(50):
         notas = float(input(f'Digite a {i+1}º nota: '))
         lista.append(notas)
 
