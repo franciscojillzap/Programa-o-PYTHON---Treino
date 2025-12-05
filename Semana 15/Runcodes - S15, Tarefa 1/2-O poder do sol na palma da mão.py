@@ -25,15 +25,15 @@ def temperatura_maxima(t):
             #Converte a primeira temperatura para CELCIUS
             temp1_cel = fahrenheit_em_celcius(temp1)
 
-            total_temp = temp1_cel + temp2
-            return f'{total_temp:.4f}', esc2
+            total_temp = round(temp1_cel + temp2, 4)
+            return total_temp, esc2
 
         elif esc2 == 'F':
             #Converte a primeira temperatura para FAHRENHEIT
             temp1_fah = celcius_em_fahrenheit(temp1)
             
-            total_temp = temp1_fah + temp2
-            return f'{total_temp:.4f}', esc2
+            total_temp = round(temp1_fah + temp2, 4)
+            return total_temp, esc2
 
 #Programa principal
 def main():
@@ -43,13 +43,12 @@ def main():
         temperatura = float(input(f'\nDigite a {i+1}ª temperatura: '))
         lista.append(temperatura)
 
-        escala = input('A escala correspondente é: ').upper()[0]
+        escala = input('A escala correspondente: ').upper()[0]
         lista.append(escala)
 
     tupla = tuple(lista)
 
-    print(f'\n{tupla}')
-    print(temperatura_maxima(tupla))
+    print(f'\n{temperatura_maxima(tupla)}')
 
 if __name__ == '__main__':
     main()
