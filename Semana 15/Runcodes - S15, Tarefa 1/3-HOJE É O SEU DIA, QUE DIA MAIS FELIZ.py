@@ -19,7 +19,7 @@ def cidades_aniversariantes(D, M):
     MES = nome_dos_meses(M).upper()
     lista_aniversario = []
     
-    print(f'CIDADES QUE FAZEM ANIVERSÁRIO EM {DIA} DE {MES}:')
+    print(f'\nCIDADES QUE FAZEM ANIVERSÁRIO EM {DIA} DE {MES}:')
 
     for uf, ibge, nome, dia, mes, pop in carrega_cidades():
         if dia == D and mes == M:
@@ -28,8 +28,10 @@ def cidades_aniversariantes(D, M):
     return lista_aniversario
     
 def main():
-    dia = int(input())
-    mes = int(input())
+    data = input('Digite uma data (formato - DD/MM): ')
+
+    #Divide a data em duas partes utilizando '/' como ponto de referência
+    dia, mes = map(int, data.split('/'))
     
     for cidades in cidades_aniversariantes(dia, mes):
         print(cidades)
